@@ -87,8 +87,9 @@ class LoginView(NeverCacheMixin, LogoutUserMixin, FormView):
                                                         'ticket': st.ticket})
                 return redirect(service, params={'ticket': st.ticket})
             else:
-                msg = _("You are logged in as %s") % request.user
-                messages.success(request, msg)
+                # msg = _("You are logged in as %s") % request.user
+                # messages.success(request, msg)
+                kwargs['user'] = request.user
         return super(LoginView, self).get(request, *args, **kwargs)
 
     def warn_user(self):

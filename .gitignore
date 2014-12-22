@@ -6,6 +6,7 @@ dist/
 build/
 MANIFEST
 
+.coverage
 .tox/
 htmlcov/
 
